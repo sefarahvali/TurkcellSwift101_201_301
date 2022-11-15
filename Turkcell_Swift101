@@ -1,0 +1,214 @@
+//
+//  main.swift
+//  Swift_Giris
+//
+//  Created by Rıfat RAHVALI on 14.11.2022.
+//
+
+import Foundation
+
+print("Hello, World!")
+
+//Değişkenlerin tip kavramı vardır?
+//Değişken nedir?
+//Değişken ne işe yarar?
+//Değişken nerede tutulur?
+//
+//type safe : değişkene başlangıçta hangi tip verilirse projenin ilerleyen zamanlarında başta verilen tip kullanılır.
+//Nesne tabanlı programlamada işimize yaracak?
+//
+//Nesne tabanlı programlama nedir?
+//nesne tabanlı programlamanın felsefesi nedir?
+//
+//Int nedir ? : tam sayılar için
+//float : ondalıklı sayılar için
+//double : ondalıklı sayıdır. float’ın 64bitlik halidir.
+//
+//metinsel :
+//string : metin
+//bool : true-false
+//
+//değişkenlerin 2 yapısı var
+//
+//sabit : değeri değişemeyenler için : let
+//değişebilen : değişken : var
+//var d1 : Int
+//d1 = 6.7
+//
+//print - konsolda yazdırmak istediğimiz sonucu ekrana döndürür.
+//
+//derleyici sağdan sola doğru okur
+//değer, tip, değişken adı
+
+
+
+let d_sabit : Int
+d_sabit=10
+print(d_sabit)
+
+// aritmetik ve mantıksal operatörler
+
+// matematiksel işlemlerdir.
+// +, -, *, /, %
+// sayısal tiplerde + toplama işlemi yapar
+// sözel tiplerde ise + birleştirme işlemi yapar
+
+var f1 : Float
+var f2 : Float
+var t,c,b,cr: Float
+
+var m : Int
+var d1 : Int
+var d2 : Int
+
+var d = 5
+
+
+d1 = 8
+d2 = 3
+f1 = 8
+f2 = 3.3
+t = f1 + f2
+c = f1 - f2
+b = f1 / f2
+cr = f1 * f2
+m = d1 % d2
+print(t,c,b,cr)
+print(m)
+
+
+// mantıksal operatörler - karşılaştırma operatörleridir.
+//  = atama
+// == karşılaştırma
+// > soldaki değer sağdakinden büyük mü
+// < soldaki değer sağdakinden küçük mü
+// >=
+// <=
+
+
+// && ve, || veya
+
+// Tip dönüşümleri
+var k : Int = 10
+var p = "metinsel ifade"
+
+var y = p + " ile " + String(k)
+print(y)
+
+
+// Tuples - değişken tür kümesi
+var t1 = (12,15,18,"isim",true)
+var u = t1.0
+print(u)
+
+// optionals
+var yas : Int?
+if(yas == nil){
+    print("yaş girilmemiştir.")
+}else {
+    print("yaş : ", yas)
+}
+
+//karar yapıları
+var yas1 : Int?
+if(yas1 == nil){ // yas1 değişkeni boş ise
+    print("yaş girilmemiştir.")
+}else {
+    print("yaş : ", yas1)
+}
+
+
+// if let
+
+// değişken optional ise
+
+var opStr : String?
+
+if opStr != nil{
+    print(opStr)
+}
+
+if let str = opStr{
+    print(str )
+}else{
+    print("değer boş olamaz")
+}
+
+
+// iften daha performanslı
+
+var yas2 : Int = 19
+switch yas2{
+    case 10 :
+    print("yas 10")
+    case 15 :
+    print("yas 15")
+    case 16,17,18:
+    print("16,18 arası")
+case let a where a > 18 && a < 30:
+    print("yaş 18 ile 30 arası")
+    
+    default:
+        print("yasyok")
+}
+
+
+var kullaniciIslemGunu : Int?
+var kullaniciIslemSaati : Int?
+
+switch kullaniciIslemGunu{
+case 1,2,3,4,5:
+    print("haftaiçi")
+    switch kullaniciIslemSaati{
+        
+    default:
+        print("mesaibitti")
+    }
+case 6,7:
+    print("haftasonu")
+    
+default:
+    print("tatil")
+}
+
+// while - koşul döngünden önce kontrol edilir
+// koşul sağlanmadığında while döngüsü çalışmaz
+var i : Int = 0
+while i <= 5{
+    print("i : ", i)
+    i = i + 1
+}
+// repeat-while - koşul döngügden sonra kontrol edilir
+// koşul sağlanmasa bile repat while en az 1 kez çalışır.
+var s : Int = 0
+repeat {
+    print("s : ", s)
+    s = s + 1
+}while s < 10
+
+
+// for dögüleri
+// değer-liste üzerinden işlem yapılması için özelleştirilmiş döngülerdir.
+for i in 0...10 {
+//    10 dahil olsun
+//    10 dahil olmasın ..<
+    print("i : ", i)
+}
+
+// break - continue
+
+for i in 1...10{
+    print("ilk satır :", i)
+    
+    if i == 5 {
+        break
+//        döngüyü bitirir.
+//        continue
+//        her ikisindede bir sonraki işlemler çalışmaz.
+    }
+//    continue çalışmadan diğer koşula geçmesini sağlıyor.
+    print("ikinci satır : ", i)
+    
+    
+    
+}
